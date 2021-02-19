@@ -19,6 +19,14 @@ connection.connect(function (err) {
   console.log("connected as id " + connection.threadId);
 });
 
+
+if(process.env.NODE_ENV === 'production'){
+    const path  =  require('path');
+    app.get('/*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
+
 app.get("/crew", (req, res) => {
   connection.query("SELECT * FROM crew_mate", (err, results) => {
     if (err) {
