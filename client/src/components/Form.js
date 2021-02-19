@@ -7,7 +7,7 @@ function Form() {
   const [name, setName] = useState();
 
   const addCrewMate = () => {
-    axios.post("http://localhost:3000/new", { name: name }).then(() => {
+    axios.post("https://intense-chamber-61096.herokuapp.com/new", { name: name }).then(() => {
       console.log("success " + name);
     });
   };
@@ -15,7 +15,7 @@ function Form() {
   const [crewMateList, setCrewMateList] = useState([]);
 
   const getCrewMates = () => {
-    axios.get("http://localhost:3000/crew").then((response) => {
+    axios.get("https://intense-chamber-61096.herokuapp.com/crew").then((response) => {
       setCrewMateList(response.data);
     });
   };
