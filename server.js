@@ -1,22 +1,54 @@
-const express = require('express')
-require('dotenv').config()
-const app = express()
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require("express");
+const app = express();
+const connection = require("./config");
+const PORT = process.env.PORT || 5000;
+require("dotenv").config();
 
-app.use(express.json())
+app.use(express.json());
 
-app.use(express.static('client/build'))
+app.use(express.static("client/build"));
 
-app.get('/api/test', (req, res) => {
-    res.send({
-        msg: "Hello !"
-    })
-})
+app.listen(PORT, () => console.log(`Example app listening on port` + PORT));
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build.index.html'))
-})
+connection.connect(function (err) {
+  if (err) {
+    console.error("error connecting : " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
 
-app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(PORT, () => console.log(`Example app listening on port` + PORT))
+app.get("/crew", (req, res) => {
+  connection.query("SELECT * FROM crew_mate", (err, results) => {
+    if (err) {
+      res.status(500).send("Error retrieving data");
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
+
+app.post("/new", (req, res) => {
+  const name = req.body.name;
+  connection.query(
+    "INSERT INTO crew_mate (name) VALUES (?)",
+    [name],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted");
+      }
+    }
+  );
+});
+
+app.delete("/bye", (req, res) => {
+  connection.query("DELETE FROM crew_mate", (err, results) => {
+    if (err) {
+      res.status(500).send("Error deleting data");
+    } else {
+        res.status(200).send("Values deleted");
+    }
+  });
+});
