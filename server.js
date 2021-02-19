@@ -19,7 +19,7 @@ connection.connect(function (err) {
   console.log("connected as id " + connection.threadId);
 });
 
-app.get("/crew", (req, res) => {
+app.get("https://intense-chamber-61096.herokuapp.com/crew", (req, res) => {
   connection.query("SELECT * FROM crew_mate", (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving data");
@@ -29,7 +29,7 @@ app.get("/crew", (req, res) => {
   });
 });
 
-app.post("/new", (req, res) => {
+app.post("https://intense-chamber-61096.herokuapp.com/new", (req, res) => {
   const name = req.body.name;
   connection.query(
     "INSERT INTO crew_mate (name) VALUES (?)",
