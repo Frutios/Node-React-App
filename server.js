@@ -12,6 +12,9 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 
+app.disable('etag');
+
+
 app.listen(PORT, () => console.log(`Example app listening on port` + PORT));
 
 connection.connect(function (err) {
