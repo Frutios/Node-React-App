@@ -27,6 +27,17 @@ function Form() {
   };
   */
 
+  const display = () => {crewMateList.map((val, key) => {
+    return (
+      <div className="crewMember" key={val.id}>
+        <div>
+          <img className="reactLogo" src={logo} alt="crewLogo" />
+        </div>
+        <p>{val.name}</p>
+      </div>
+    );
+  })}
+
   return (
     <div>
       <div className="mainDiv">
@@ -59,16 +70,7 @@ function Form() {
       </div>
       <h1>Membre de l'équipage ✌</h1>
       <div className="crewContainer">
-        { () => crewMateList.map((val, key) => {
-          return (
-            <div className="crewMember" key={val.id}>
-              <div>
-                <img className="reactLogo" src={logo} alt="crewLogo" />
-              </div>
-              <p>{val.name}</p>
-            </div>
-          );
-        })}
+        {display}
       </div>
     </div>
   );
