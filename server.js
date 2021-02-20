@@ -3,6 +3,7 @@ const app = express();
 const connection = require("./config");
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 app.use(cors());
@@ -20,8 +21,6 @@ connection.connect(function (err) {
   }
   console.log("connected as id " + connection.threadId);
 });
-
-
 
 app.get("/crew", (req, res) => {
   connection.query("SELECT * FROM crew_mate", (err, results) => {
@@ -45,22 +44,19 @@ app.post("/new", (req, res) => {
         res.send("Values Inserted");
       }
     }
-    );
+  );
+});
+
+app.delete("/bye", (req, res) => {
+  connection.query("DELETE FROM crew_mate", (err, results) => {
+    if (err) {
+      res.status(500).send("Error deleting data");
+    } else {
+      res.status(200).send("Values deleted");
+    }
   });
-  
-  app.delete("/bye", (req, res) => {
-    connection.query("DELETE FROM crew_mate", (err, results) => {
-      if (err) {
-        res.status(500).send("Error deleting data");
-      } else {
-        res.status(200).send("Values deleted");
-      }
-    });
-  });
-  
-  if(process.env.NODE_ENV === 'production'){
-      const path  =  require('path');
-      app.get('/*',(req,res)=>{
-          res.sendFile(path.join(__dirname+'client/build/index.html'))
-      })
-  }
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname+'client/build/index.html'));
+});
