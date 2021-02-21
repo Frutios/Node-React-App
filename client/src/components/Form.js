@@ -5,23 +5,24 @@ import logo from "../react.svg";
 
 function Form() {
   const [name, setName] = useState();
-
-  const addCrewMate = () => {
-    axios
-      .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
-      .then(() => {
-        console.log("success " + name);
-      });
-  };
-
   const [crewMateList, setCrewMateList] = useState([]);
 
-  const getCrewMates = () => {
-    axios
-      .get("https://intense-chamber-61096.herokuapp.com/crew")
-      .then((response) => {
-        setCrewMateList(response.data);
-      });
+  const updateCrewMate = () => {
+    const addCrewMate = () => {
+      axios
+        .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
+        .then(() => {
+          console.log("success " + name);
+        });
+    };
+
+    const getCrewMates = () => {
+      axios
+        .get("https://intense-chamber-61096.herokuapp.com/crew")
+        .then((response) => {
+          setCrewMateList(response.data);
+        });
+    };
   };
   /** 
   const byeCrewMate = () => {
@@ -47,7 +48,7 @@ function Form() {
             />
           </div>
           <div className="buttonContainer">
-            <button className="button" onClick={addCrewMate} >
+            <button className="button" onClick={updateCrewMate}>
               Ajouter
             </button>
             <button className="button" onClick={getCrewMates}>
