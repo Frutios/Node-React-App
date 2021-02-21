@@ -15,11 +15,7 @@ function Form() {
         setTimeout(1000);
       });
 
-    axios
-      .get("https://intense-chamber-61096.herokuapp.com/crew")
-      .then((response) => {
-        setCrewMateList(response.data);
-      });
+  
   };
 
   useEffect(() => {
