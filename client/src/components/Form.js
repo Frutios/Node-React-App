@@ -12,7 +12,6 @@ function Form() {
       .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
       .then(() => {
         console.log("success " + name);
-        setTimeout(2000);
       });
 
       axios
