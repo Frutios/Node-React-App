@@ -13,8 +13,8 @@ function Form() {
       .then(() => {
         console.log("success " + name);
       });
-      setTimeout(1000);
-      axios
+    setTimeout(1000);
+    axios
       .get("https://intense-chamber-61096.herokuapp.com/crew")
       .then((response) => {
         setCrewMateList(response.data);
@@ -34,16 +34,17 @@ function Form() {
       <div className="mainDiv">
         <div className="formContainer">
           <div className="firstField">
-            <label className="formTitle">Ajouter un membre d'équipage</label>
-            <input
-              className="formField"
-              type="text"
-              value={name}
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              onSubmit="<h3> Vous avez bien ajouté ${name} à l'équipage</h3>"
-            />
+            <form onSubmit="<h3> Vous avez bien ajouté ${name} à l'équipage</h3>">
+              <label className="formTitle">Ajouter un membre d'équipage</label>
+              <input
+                className="formField"
+                type="text"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              />
+            </form>
           </div>
           <div className="buttonContainer">
             <button className="button" onClick={updateCrewMate}>
