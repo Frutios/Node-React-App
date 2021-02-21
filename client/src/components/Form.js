@@ -51,7 +51,7 @@ function Form() {
             <button className="button" onClick={updateCrewMate}>
               Ajouter
             </button>
-            <button className="button" onClick={getCrewMates}>
+            <button className="button">
               Actualiser l'équipage
             </button>
             {/*  
