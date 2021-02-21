@@ -59,6 +59,7 @@ function Form() {
       </div>
       <h1>Membre de l'équipage ✌</h1>
       <div className="crewContainer">
+        {getCrewMates}
         {crewMateList.map((val, key) => {
           return (
             <div className="crewMember" key={val.id}>
