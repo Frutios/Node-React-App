@@ -34,7 +34,7 @@ function Form() {
       <div className="mainDiv">
         <div className="formContainer">
           <div className="firstField">
-            <form onSubmit="<h3> Vous avez bien ajouté ${name} à l'équipage</h3>">
+            <form>
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
                 className="formField"
