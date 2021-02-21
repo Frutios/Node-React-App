@@ -23,17 +23,12 @@ function Form() {
   };
 
   useEffect(() => {
-    {crewMateList.map((val, key) => {
-      return (
-        <div className="crewMember" key={val.id}>
-          <div>
-            <img className="reactLogo" src={logo} alt="crewLogo" />
-          </div>
-          <p>{val.name}</p>
-        </div>
-      );
-    })}
-  }, [])
+    axios
+      .get("https://intense-chamber-61096.herokuapp.com/crew")
+      .then((response) => {
+        setCrewMateList(response.data);
+      });
+  }, []);
 
   return (
     <div>
