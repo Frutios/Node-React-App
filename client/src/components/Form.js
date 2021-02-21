@@ -33,7 +33,7 @@ function Form() {
         </div>
       );
     })}
-  })
+  }, [])
 
   return (
     <div>
