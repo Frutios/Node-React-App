@@ -13,7 +13,7 @@ function Form() {
       .then(() => {
         console.log("success " + name);
       });
-
+      setTimeout(1000);
       axios
       .get("https://intense-chamber-61096.herokuapp.com/crew")
       .then((response) => {
