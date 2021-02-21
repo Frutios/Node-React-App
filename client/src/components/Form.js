@@ -44,7 +44,7 @@ function Form() {
               onChange={(event) => {
                 setName(event.target.value);
               }}
-              onSubmit={getCrewMates}
+              onClick={getCrewMates}
             />
           </div>
           <div className="buttonContainer">
