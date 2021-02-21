@@ -42,6 +42,7 @@ function Form() {
               onChange={(event) => {
                 setName(event.target.value);
               }}
+              onSubmit="<h3> Vous avez bien ajouté ${name} à l'équipage</h3>"
             />
           </div>
           <div className="buttonContainer">
