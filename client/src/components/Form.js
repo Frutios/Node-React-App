@@ -14,7 +14,7 @@ function Form() {
       });
   };
 
-  const [crewMateList, setCrewMateList] = useState([1]);
+  const [crewMateList, setCrewMateList] = useState([]);
 
   const getCrewMates = () => {
     axios
@@ -44,6 +44,7 @@ function Form() {
               onChange={(event) => {
                 setName(event.target.value);
               }}
+              onSubmit={getCrewMates}
             />
           </div>
           <div className="buttonContainer">
