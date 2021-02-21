@@ -24,7 +24,7 @@ function Form() {
       .then((response) => {
         setCrewMateList(response.data);
       });
-  }, []);
+  }, [crewMateList]);
 
   return (
     <div>
