@@ -47,7 +47,7 @@ function Form() {
             />
           </div>
           <div className="buttonContainer">
-            <button className="button" onClick={addCrewMate} onClick={getCrewMates} >
+            <button className="button" onClick={addCrewMate} onSubmit={getCrewMates} >
               Ajouter
             </button>
             <button className="button" onClick={getCrewMates}>
