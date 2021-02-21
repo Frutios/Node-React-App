@@ -7,27 +7,19 @@ function Form() {
   const [name, setName] = useState();
   const [crewMateList, setCrewMateList] = useState([]);
 
-  const updateCrewMate = () => {
-    axios
-      .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
-      .then(() => {
-        console.log("success " + name);
-        setTimeout(1000);
-      });
-
-    axios
-      .get("https://intense-chamber-61096.herokuapp.com/crew")
-      .then((response) => {
-        setCrewMateList(response.data);
-      });
-  };
-
   useEffect(() => {
-    axios
-      .get("https://intense-chamber-61096.herokuapp.com/crew")
-      .then((response) => {
-        setCrewMateList(response.data);
-      });
+      axios
+        .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
+        .then(() => {
+          console.log("success " + name);
+          setTimeout(1000);
+        });
+
+      axios
+        .get("https://intense-chamber-61096.herokuapp.com/crew")
+        .then((response) => {
+          setCrewMateList(response.data);
+        });
   }, []);
 
   return (
@@ -46,7 +38,7 @@ function Form() {
             />
           </div>
           <div className="buttonContainer">
-            <button className="button" onClick={updateCrewMate}>
+            <button className="button">
               Ajouter
             </button>
           </div>
