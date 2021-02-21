@@ -8,21 +8,17 @@ function Form() {
   const [crewMateList, setCrewMateList] = useState([]);
 
   const updateCrewMate = () => {
-    const addCrewMate = () => {
-      axios
-        .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
-        .then(() => {
-          console.log("success " + name);
-        });
-    };
+    axios
+      .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
+      .then(() => {
+        console.log("success " + name);
+      });
 
-    const getCrewMates = () => {
-      axios
-        .get("https://intense-chamber-61096.herokuapp.com/crew")
-        .then((response) => {
-          setCrewMateList(response.data);
-        });
-    };
+    axios
+      .get("https://intense-chamber-61096.herokuapp.com/crew")
+      .then((response) => {
+        setCrewMateList(response.data);
+      });
   };
   /** 
   const byeCrewMate = () => {
@@ -51,9 +47,7 @@ function Form() {
             <button className="button" onClick={updateCrewMate}>
               Ajouter
             </button>
-            <button className="button">
-              Actualiser l'équipage
-            </button>
+            <button className="button">Actualiser l'équipage</button>
             {/*  
             <button className="button" onClick={byeCrewMate}>
               Supprimer l'équipage
