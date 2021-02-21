@@ -33,8 +33,8 @@ function Form() {
     <div>
       <div className="mainDiv">
         <div className="formContainer">
-          <div className="firstField">
-            <form>
+          <form>
+            <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
                 className="formField"
@@ -44,8 +44,8 @@ function Form() {
                   setName(event.target.value);
                 }}
               />
-            </form>
-          </div>
+            </div>
+          </form>
           <div className="buttonContainer">
             <button className="button" onClick={updateCrewMate}>
               Ajouter
