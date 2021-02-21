@@ -14,7 +14,7 @@ function Form() {
       });
   };
 
-  const [crewMateList, setCrewMateList] = useState(["Jason"]);
+  const [crewMateList, setCrewMateList] = useState([1]);
 
   const getCrewMates = () => {
     axios
