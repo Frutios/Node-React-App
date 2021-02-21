@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
 import logo from "../react.svg";
@@ -21,13 +21,19 @@ function Form() {
         setCrewMateList(response.data);
       });
   };
-  /** 
-  const byeCrewMate = () => {
-    axios.delete("http://localhost:3000/bye").then((response) => {
-      setCrewMateList(response.data);
-    });
-  };
-  */
+
+  useEffect(() => {
+    {crewMateList.map((val, key) => {
+      return (
+        <div className="crewMember" key={val.id}>
+          <div>
+            <img className="reactLogo" src={logo} alt="crewLogo" />
+          </div>
+          <p>{val.name}</p>
+        </div>
+      );
+    })}
+  })
 
   return (
     <div>
