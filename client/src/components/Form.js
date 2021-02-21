@@ -7,17 +7,21 @@ function Form() {
   const [name, setName] = useState();
 
   const addCrewMate = () => {
-    axios.post("https://intense-chamber-61096.herokuapp.com/new", { name: name }).then(() => {
-      console.log("success " + name);
-    });
+    axios
+      .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
+      .then(() => {
+        console.log("success " + name);
+      });
   };
 
-  const [crewMateList, setCrewMateList] = useState([]);
+  const [crewMateList, setCrewMateList] = useState(["Jason"]);
 
   const getCrewMates = () => {
-    axios.get("https://intense-chamber-61096.herokuapp.com/crew").then((response) => {
-      setCrewMateList(response.data);
-    });
+    axios
+      .get("https://intense-chamber-61096.herokuapp.com/crew")
+      .then((response) => {
+        setCrewMateList(response.data);
+      });
   };
   /** 
   const byeCrewMate = () => {
@@ -59,7 +63,6 @@ function Form() {
       </div>
       <h1>Membre de l'équipage ✌</h1>
       <div className="crewContainer">
-        {getCrewMates}
         {crewMateList.map((val, key) => {
           return (
             <div className="crewMember" key={val.id}>
