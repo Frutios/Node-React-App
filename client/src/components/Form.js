@@ -35,7 +35,7 @@ function Form() {
       <div className="mainDiv">
         <div className="formContainer">
           <form onSubmit={(event) => {
-            alert("Vous avez ajouté ${name} à l'équipage");
+            alert("Vous avez ajouté `${name}` à l'équipage");
           } }>
             <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
