@@ -19,6 +19,9 @@ function Form() {
       .then((response) => {
         setCrewMateList(response.data);
       });
+
+    alert("Vous avez ajouté un membre d'équipage");
+
   };
 
   useEffect(() => {
@@ -28,15 +31,12 @@ function Form() {
         setCrewMateList(response.data);
       });
   }, []);
-
-  const submit = alert("Vous avez ajouté un membre d'équipage");
       
-  
   return (
     <div>
       <div className="mainDiv">
         <div className="formContainer">
-          <form onSubmit={submit}>
+          <form>
             <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
