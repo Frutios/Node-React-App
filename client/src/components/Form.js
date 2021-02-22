@@ -20,7 +20,7 @@ function Form() {
         setCrewMateList(response.data);
       });
 
-    alert("Vous avez ajouté un membre d'équipage");
+    alert("Vous avez ajouté " +  {name}  + " à l'équipage");
 
   };
 
