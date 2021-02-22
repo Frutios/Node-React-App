@@ -19,12 +19,12 @@ function Form() {
       .then((response) => {
         setCrewMateList(response.data);
       });
-    if (name) {
-      alert("Vous avez ajouté " +  name  + " à l'équipage");
-    } else {
-      alert("Ajoutez un membre d'équipage 😉")
-    }
 
+    if (name) {
+      alert("Vous avez ajouté " + name + " à l'équipage 👌");
+    } else {
+      alert("Ajoutez un membre d'équipage 😉");
+    }
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Form() {
         setCrewMateList(response.data);
       });
   }, []);
-      
+
   return (
     <div>
       <div className="mainDiv">
