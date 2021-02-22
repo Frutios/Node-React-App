@@ -30,13 +30,17 @@ function Form() {
       });
   }, []);
 
+  document.getElementById("form").addEventListener({ name }, check);
+
+  function check() {
+    alert("Vous avez ajouté un membre");
+  }
+
   return (
     <div>
       <div className="mainDiv">
         <div className="formContainer">
-          <form onSubmit={(event) => {
-            alert("Vous avez ajouté `${name}` à l'équipage");
-          } }>
+          <form id="form">
             <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
