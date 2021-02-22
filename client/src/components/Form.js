@@ -19,8 +19,11 @@ function Form() {
       .then((response) => {
         setCrewMateList(response.data);
       });
-
-    alert("Vous avez ajouté " +  name  + " à l'équipage");
+    if (name) {
+      alert("Vous avez ajouté " +  name  + " à l'équipage");
+    } else {
+      alert("Ajoutez un membre d'équipage 😉")
+    }
 
   };
 
