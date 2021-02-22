@@ -30,11 +30,13 @@ function Form() {
       });
   }, []);
 
+/* 
   document.getElementById("form").addEventListener({ name }, check);
 
   function check() {
     alert("Vous avez ajouté un membre");
   }
+*/
 
   return (
     <div>
