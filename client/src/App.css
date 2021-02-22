@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Stick', sans-serif;
   box-sizing: border-box;
   outline: 0;
 }
