@@ -29,8 +29,10 @@ function Form() {
       });
   }, []);
 
-  const submit = <p> Vous avez ajouté un membre d'équipage</p>
-
+  function submit() {
+    document.getElementsByClassName("check").documentElement.innerHTML =
+      "Vous avez ajouté un membre d'équipage";
+  }
   return (
     <div>
       <div className="mainDiv">
@@ -55,6 +57,7 @@ function Form() {
           </div>
         </div>
       </div>
+      <h2 className="check"></h2>
       <h1>Membre de l'équipage ✌</h1>
       <div className="crewContainer">
         {crewMateList.map((val, key) => {
