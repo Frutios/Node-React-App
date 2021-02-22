@@ -29,10 +29,10 @@ function Form() {
       });
   }, []);
 
-  function submit() {
-    document.getElementsByClassName("check").documentElement.innerHTML =
-      "Vous avez ajouté un membre d'équipage";
-  }
+  const submit = (document.getElementsByClassName(
+    "check"
+  ).documentElement.innerHTML = "Vous avez ajouté un membre d'équipage");
+
   return (
     <div>
       <div className="mainDiv">
