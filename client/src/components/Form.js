@@ -29,11 +29,13 @@ function Form() {
       });
   }, []);
 
+  const submit = <p> Vous avez ajouté un membre d'équipage</p>
+
   return (
     <div>
       <div className="mainDiv">
         <div className="formContainer">
-          <form>
+          <form onSubmit={submit}>
             <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
