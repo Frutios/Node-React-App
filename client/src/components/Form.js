@@ -29,10 +29,9 @@ function Form() {
       });
   }, []);
 
-  const submit = (document.getElementsByClassName(
-    "check"
-  ).documentElement.innerHTML = "Vous avez ajouté un membre d'équipage");
-
+  const submit = alert("Vous avez ajouté un membre d'équipage");
+      
+  
   return (
     <div>
       <div className="mainDiv">
