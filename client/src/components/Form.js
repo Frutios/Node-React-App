@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
 import logo from "../react.svg";
-import e from "express";
 
 function Form() {
   const [name, setName] = useState();
@@ -29,6 +28,13 @@ function Form() {
         setCrewMateList(response.data);
       });
   }, []);
+
+
+  document.getElementById("form").addEventListener({ name }, check);
+
+  function check() {
+    alert("Vous avez ajouté un membre");
+  }
 
   return (
     <div>
