@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
 import logo from "../react.svg";
+import e from "express";
 
 function Form() {
   const [name, setName] = useState();
@@ -33,7 +34,9 @@ function Form() {
     <div>
       <div className="mainDiv">
         <div className="formContainer">
-          <form>
+          <form onSubmit={(event) => {
+            alert("Vous avez ajouté ${name} à l'équipage");
+          } }>
             <div className="firstField">
               <label className="formTitle">Ajouter un membre d'équipage</label>
               <input
