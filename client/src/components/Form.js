@@ -12,12 +12,11 @@ function Form() {
       .post("https://intense-chamber-61096.herokuapp.com/new", { name: name })
       .then(() => {
         console.log("success " + name);
-      });
-    setTimeout(1000);
-    axios
-      .get("https://intense-chamber-61096.herokuapp.com/crew")
-      .then((response) => {
-        setCrewMateList(response.data);
+        axios
+          .get("https://intense-chamber-61096.herokuapp.com/crew")
+          .then((response) => {
+            setCrewMateList(response.data);
+          });
       });
 
     if (name) {
